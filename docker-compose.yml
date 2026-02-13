@@ -1,0 +1,14 @@
+services:
+  mysql:
+    build: .
+    container_name: sakila-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sakila
+    volumes:
+      - sakila-data:/var/lib/mysql
+
+volumes:
+  sakila-data:
